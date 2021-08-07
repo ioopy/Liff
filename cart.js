@@ -11,6 +11,7 @@ var cart = {
   },
 
   liffopen : function() {
+    localStorage.clear();
     liff
         .init({ liffId: "1656113675-9kwWBZQz" })
         .then(() => {
