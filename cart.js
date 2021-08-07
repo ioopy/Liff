@@ -199,6 +199,7 @@ var cart = {
   
   // (H) CHECKOUT
   checkout : function () {
+    console.log('test2');
     if (
             liff.getContext().type !== "none" &&
             liff.getContext().type !== "external"
