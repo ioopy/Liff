@@ -202,7 +202,7 @@ var cart = {
   checkout : function () {
     if (
             liff.getContext().type !== "none" &&
-            liff.getContext().type == "external"
+            liff.getContext().type !== "external"
         ) {
             // Create flex message
             let message = cart.genMsg();
