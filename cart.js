@@ -214,7 +214,7 @@ var cart = {
                     liff.closeWindow();
                 })
                 .catch((err) => {
-                    alert('error');
+                    alert(error.message);
                     console.error(err.code, error.message);
                 });
         }
@@ -265,44 +265,7 @@ var cart = {
                     ],
                 },
             };
-    for (let key in cart.items) {
-      p = products[key];
-      let detail =  {};
-      detail = 
-    {
-      type: "box",
-      layout: "horizontal",
-      contents: [
-          {
-              type: "box",
-              layout: "vertical",
-              contents: [
-                  {
-                      type: "text",
-                      text: `${p.name}`,
-                      size: "sm",
-                  },
-              ],
-              width: "110px",
-          },
-          {
-              type: "box",
-              layout: "vertical",
-              contents: [
-                  {
-                      type: "text",
-                      text: `${p.price}`,
-                      size: "sm",
-                      align: "end",
-                      weight: "bold",
-                  },
-              ],
-          },
-      ],
-  };
-     
-    flexJson.body.contents.push(detail);
-    }
+    
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
