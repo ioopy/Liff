@@ -200,69 +200,112 @@ var cart = {
   
   // (H) CHECKOUT
   checkout : function () {
-    console.log('test2');
     if (
             liff.getContext().type !== "none" &&
-            liff.getContext().type !== "external"
+            liff.getContext().type == "external"
         ) {
             // Create flex message
             let message = cart.genMsg();
+            console.log(message);
             // Send messages
-            liff
+            setTimeout(function(){ 
+              liff
                 .sendMessages(message)
                 .then(() => {
                     liff.closeWindow();
                 })
                 .catch((err) => {
-                    alert(error.message);
                     console.error(err.code, error.message);
                 });
+          
+          }, 3000);
+            
         }
   },
 
- genMsg : function() {
+  genMsg : function() {
     let flexJson = {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "horizontal",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
+                type: "bubble",
+                size: "giga",
+                body: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "horizontal",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "P ioopy",
+                                    size: "xl",
+                                    color: "#0551c2ff",
+                                    weight: "bold",
+                                    align: "center",
+                                },
+                            ],
+                        },
+                        {
+                            type: "separator",
+                            margin: "lg",
+                        },
+                    ],
+                    spacing: "md",
+                },
+                footer: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "button",
+                            action: {
+                                type: "uri",
+                                label: "สอบถามเพิ่มเติม",
+                                uri: "www.google.com",
+                            },
+                            style: "primary",
+                        },
+                    ],
+                },
+            };
+    for (let itemId in cart.items) {
+      var productCart = products[itemId];
+      let detail =  {};
+      detail = 
+    {
+      type: "box",
+      layout: "horizontal",
+      contents: [
           {
-            "type": "image",
-            "url": "https://toscaworld.files.wordpress.com/2014/06/wpid-a2fd688df2c24000.png",
-            "aspectRatio": "1:2",
-            "aspectMode": "cover"
-          }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "flex=1",
-            "flex": 1,
-            "gravity": "center"
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${productCart.name}`,
+                      size: "sm",
+                  },
+              ],
+              width: "110px",
           },
           {
-            "type": "separator"
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${productCart.price}`,
+                      size: "sm",
+                      align: "end",
+                      weight: "bold",
+                  },
+              ],
           },
-          {
-            "type": "text",
-            "text": "flex=1",
-            "flex": 1,
-            "gravity": "center"
-          }
-        ]
-      }
-    ]
-  }
-}
+      ],
+  };
+     
+    flexJson.body.contents.push(detail);
+    }
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
