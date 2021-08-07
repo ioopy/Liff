@@ -282,7 +282,7 @@ var cart = {
               contents: [
                   {
                       type: "text",
-                      text: `${productCart.name}`,
+                      text: "test1",
                       size: "sm",
                   },
               ],
@@ -294,7 +294,7 @@ var cart = {
               contents: [
                   {
                       type: "text",
-                      text: `${productCart.price}`,
+                      text: "test",
                       size: "sm",
                       align: "end",
                       weight: "bold",
