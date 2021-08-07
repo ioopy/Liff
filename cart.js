@@ -222,87 +222,47 @@ var cart = {
 
  genMsg : function() {
     let flexJson = {
-                type: "bubble",
-                size: "giga",
-                body: {
-                    type: "box",
-                    layout: "vertical",
-                    contents: [
-                        {
-                            type: "box",
-                            layout: "horizontal",
-                            contents: [
-                                {
-                                    type: "text",
-                                    text: "P ioopy",
-                                    size: "xl",
-                                    color: "#0551c2ff",
-                                    weight: "bold",
-                                    align: "center",
-                                },
-                            ],
-                        },
-                        {
-                            type: "separator",
-                            margin: "lg",
-                        },
-                    ],
-                    spacing: "md",
-                },
-                footer: {
-                    type: "box",
-                    layout: "vertical",
-                    contents: [
-                        {
-                            type: "button",
-                            action: {
-                                type: "uri",
-                                label: "สอบถามเพิ่มเติม",
-                                uri: "www.google.com",
-                            },
-                            style: "primary",
-                        },
-                    ],
-                },
-            };
-    for (let keyId in cart.items) {
-      var productByKey = products[keyId];
-      var dataContent =  {};
-      dataContent = 
-    {
-      type: "box",
-      layout: "horizontal",
-      contents: [
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "horizontal",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
           {
-              type: "box",
-              layout: "vertical",
-              contents: [
-                  {
-                      type: "text",
-                      text: `${productByKey.name}`,
-                      size: "sm",
-                  },
-              ],
-              width: "110px",
+            "type": "image",
+            "url": "https://toscaworld.files.wordpress.com/2014/06/wpid-a2fd688df2c24000.png",
+            "aspectRatio": "1:2",
+            "aspectMode": "cover"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "flex=1",
+            "flex": 1,
+            "gravity": "center"
           },
           {
-              type: "box",
-              layout: "vertical",
-              contents: [
-                  {
-                      type: "text",
-                      text: `${productByKey.price}`,
-                      size: "sm",
-                      align: "end",
-                      weight: "bold",
-                  },
-              ],
+            "type": "separator"
           },
-      ],
-  };
-     
-    flexJson.body.contents.push(dataContent);
-    }
+          {
+            "type": "text",
+            "text": "flex=1",
+            "flex": 1,
+            "gravity": "center"
+          }
+        ]
+      }
+    ]
+  }
+}
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
