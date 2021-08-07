@@ -265,7 +265,44 @@ var cart = {
                     ],
                 },
             };
-    
+    for (let keyId in cart.items) {
+      var productByKey = products[keyId];
+      var dataContent =  {};
+      dataContent = 
+    {
+      type: "box",
+      layout: "horizontal",
+      contents: [
+          {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${productByKey.name}`,
+                      size: "sm",
+                  },
+              ],
+              width: "110px",
+          },
+          {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${productByKey.price}`,
+                      size: "sm",
+                      align: "end",
+                      weight: "bold",
+                  },
+              ],
+          },
+      ],
+  };
+     
+    flexJson.body.contents.push(dataContent);
+    }
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
