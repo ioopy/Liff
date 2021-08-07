@@ -219,313 +219,89 @@ var cart = {
         }
   },
 
-  genMsg : function() {
+ genMsg : function() {
     let flexJson = {
-                    type: "bubble",
-                    size: "giga",
-                    body: {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "text",
-                                        text: "P ioopy",
-                                        size: "xl",
-                                        color: "#0551c2ff",
-                                        weight: "bold",
-                                        align: "center",
-                                    },
-                                ],
-                            },
-                            {
-                                type: "separator",
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ปีจดทะเบียนรถยนต์",
-                                                size: "md",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        width: "150px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "md",
-                                                weight: "bold",
-                                                align: "end",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ราคารถยนต์",
-                                                size: "md",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        width: "100px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "md",
-                                                weight: "bold",
-                                                align: "end",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "เงินดาวน์",
-                                                size: "md",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        width: "100px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "md",
-                                                weight: "bold",
-                                                align: "end",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ยอดจัด",
-                                                size: "lg",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        width: "100px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "lg",
-                                                weight: "bold",
-                                                align: "end",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "separator",
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ค่างวด",
-                                                size: "md",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                            {
-                                type: "separator",
-                                margin: "lg",
-                            },
-                            {
-                                type: "text",
-                                text:
-                                    "*ราคาค่างวดยังไม่รวม VAT\n*สำหรับพิจารณาข้อมูลเบื้องต้นไม่สามารถนำไปอ้างอิงในการซื้อขายได้",
-                                size: "xxs",
-                                weight: "bold",
-                                margin: "lg",
-                                align: "center",
-                                color: "#e8505b",
-                                wrap: true,
-                            },
-                        ],
-                        spacing: "md",
-                    },
-                    footer: {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "button",
-                                action: {
-                                    type: "uri",
-                                    label: "สอบถามเพิ่มเติม",
-                                    uri: "tel:0958263339",
+                type: "bubble",
+                size: "giga",
+                body: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "horizontal",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "P ioopy",
+                                    size: "xl",
+                                    color: "#0551c2ff",
+                                    weight: "bold",
+                                    align: "center",
                                 },
-                                style: "primary",
+                            ],
+                        },
+                        {
+                            type: "separator",
+                            margin: "lg",
+                        },
+                    ],
+                    spacing: "md",
+                },
+                footer: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "button",
+                            action: {
+                                type: "uri",
+                                label: "สอบถามเพิ่มเติม",
+                                uri: "www.google.com",
                             },
-                        ],
-                    },
-                };
+                            style: "primary",
+                        },
+                    ],
+                },
+            };
+    for (let key in cart.items) {
+      p = products[key];
+      let detail =  {};
+      detail = 
+    {
+      type: "box",
+      layout: "horizontal",
+      contents: [
+          {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${p.name}`,
+                      size: "sm",
+                  },
+              ],
+              width: "110px",
+          },
+          {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${p.price}`,
+                      size: "sm",
+                      align: "end",
+                      weight: "bold",
+                  },
+              ],
+          },
+      ],
+  };
+     
+    flexJson.body.contents.push(detail);
+    }
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
