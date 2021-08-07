@@ -529,6 +529,7 @@ var cart = {
                         ],
                     },
                 };
+    return [{ type: "flex", altText: "คำนวณค่างวดรถ", contents: flexJson }];
 
   }
   
