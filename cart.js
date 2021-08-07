@@ -206,7 +206,7 @@ var cart = {
         ) {
             // Create flex message
             let message = cart.genMsg();
-           
+           alert('test');
             // Send messages
             liff
                 .sendMessages(message)
