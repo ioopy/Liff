@@ -283,7 +283,7 @@ var cart = {
                   style: "primary",
               },
           ],
-      },
+      }
       };
     for (let key in cart.items) {
       p = products[key];
@@ -320,7 +320,7 @@ var cart = {
                     },
                 ],
             },
-        ],
+        ]
     };
      
     flexJson.body.contents.push(content);
