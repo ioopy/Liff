@@ -213,6 +213,7 @@ var cart = {
                     liff.closeWindow();
                 })
                 .catch((err) => {
+                    alert('error');
                     console.error(err.code, error.message);
                 });
         }
