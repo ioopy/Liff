@@ -200,7 +200,7 @@ var cart = {
   
   // (H) CHECKOUT
   checkout : function () {
-    if (confirm("Empty cart?")) {
+    if (confirm(liff.getContext().type)) {
       console.log('test');
     }     
     if (
