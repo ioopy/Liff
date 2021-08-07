@@ -11,14 +11,7 @@ var cart = {
   },
 
   liffopen : function() {
-    liff
-        .init({ liffId: "1656113675-9kwWBZQz" })
-        .then(() => {
-            cart.init();
-        })
-        .catch((err) => {
-            console.error(err.code, error.message);
-        });
+    cart.init();
   },
 
   // (B2) LOAD CART FROM LOCALSTORAGE
