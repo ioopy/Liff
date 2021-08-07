@@ -207,7 +207,7 @@ var cart = {
         ) {
             // Create flex message
             let message = cart.genMsg();
-           if (confirm(liff.getContext().type)) {
+           if (confirm('test')) {
       console.log('test');
     } 
             // Send messages
