@@ -328,7 +328,7 @@ var cart = {
         ],
     };
      
-    flexJson.body.contents.push(content);
+    //flexJson.body.contents.push(content);
     }
     console.log(flexJson);
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
