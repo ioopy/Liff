@@ -201,15 +201,6 @@ var cart = {
   // (H) CHECKOUT
   checkout : function () {
     let userId = '';
-    liff.getProfile()
-        .then(profile => {
-          userId = profile.userId;
-        })
-        .catch((err) => {
-          alert(err);
-        });
-
-   
     let price_total = 0;
 
     for (let ci in cart.items) {
