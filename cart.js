@@ -258,7 +258,7 @@ var cart = {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "สินค้า",
+                                                text: "รายการ",
                                                 size: "sm",
                                             },
                                         ],
@@ -279,6 +279,37 @@ var cart = {
                                     },
                                 ],
                             },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "P ioopy",
+                                                size: "sm",
+                                            },
+                                        ],
+                                        width: "110px",
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "P ioopy",
+                                                size: "sm",
+                                                align: "end",
+                                                weight: "bold",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
                         ],
                         spacing: "md",
                     },
@@ -291,7 +322,7 @@ var cart = {
                                 action: {
                                     type: "uri",
                                     label: "สอบถามเพิ่มเติม",
-                                    uri: "tel.191",
+                                    uri: "tel:0958263339",
                                 },
                                 style: "primary",
                             },
