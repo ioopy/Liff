@@ -200,29 +200,90 @@ var cart = {
   
   // (H) CHECKOUT
   checkout : function () {
-    
+    let userId = '';
+    liff.getProfile()
+        .then(profile => {
+          userId = profile.userId;
+        })
+        .catch((err) => {
+          alert(err);
+        });
+
+   
+    let price_total = 0;
+
+    for (let ci in cart.items) {
+      var getPrice = products[ci];
+      price_total = price_total + getPrice.price;
+    }
+    console.log(price_total);
+    let dataObject = cart.getMsgApi(price_total, userId);
+    let url_script = "https://script.google.com/macros/s/AKfycbxx8XufwPeOwhlnLNejbg0D0eTsG_tlAwO6BLJT_2bR3jipDiVHEvpjGhWg0GClGSMNBQ/exec";
+    let param = "&total="+price_total+"&data="+dataObject;
+    let url = url_script + "?callback=alert('test')"+param;
+    var req_script = jQuery.ajax({
+      crossDomain: true,
+      url: url,
+      method: "GET",
+      dataType: "jsonp"
+    });
+    if(userId === '') {
+      userId = 'U3ea66bd920df54678a4e05826910c3f4';
+    }
+     var sendMsg = jQuery.ajax({
+      url: "https://api.line.me/v2/bot/message/push",
+      method: "POST",
+      contentType : 'application/json',
+      headers: {"Authorization": "Bearer +jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU="},
+      data: cart.genMsg(userId)
+    });
+
     if (
             liff.getContext().type !== "none" &&
             liff.getContext().type !== "external"
         ) {
+          liff.closeWindow();
             // Create flex message
-            let message = cart.genMsg();
+            // let message = cart.genMsg();
             
             // Send messages
-            liff
-                .sendMessages(message)
-                .then(() => {
-                    liff.closeWindow();
-                })
-                .catch((err) => {
-                    alert(error.message);
-                    console.error(err.code, error.message);
-                });
+            // liff
+            //     .sendMessages(message)
+            //     .then(() => {
+            //         liff.closeWindow();
+            //     })
+            //     .catch((err) => {
+            //         alert(error.message);
+            //         console.error(err.code, error.message);
+            //     });
             
         }
   },
 
-  genMsg : function() {
+  getMsgApi : function(total, userIdline) {
+    let templateJson = {
+      action: "Insert",
+      data : [
+        
+      ]
+    }
+    for (let prdId in cart.items) {
+      var haiya = products[prdId];
+      let dataJson = {
+        productId: prdId,
+        productName: haiya.name,
+        productDesc: haiya.desc,
+        productPrice: haiya.price,
+        productTotal: total,
+        userId: userIdline
+      }
+      templateJson.data.push(dataJson);
+
+    }
+    return JSON.stringify(templateJson);
+  },
+
+  genMsg : function(e) {
     let flexJson = {
                     type: "bubble",
                     size: "giga",
@@ -374,8 +435,8 @@ var cart = {
         ]
     };
     flexJson.body.contents.push(toTalContent);
-
-    return [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }];
+    return {to: e, messages: [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }]};
+    // return [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }];
 
   }
   
