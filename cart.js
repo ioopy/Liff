@@ -202,7 +202,7 @@ var cart = {
   checkout : function () {
     if (
             liff.getContext().type !== "none" &&
-            liff.getContext().type == "external"
+            liff.getContext().type !== "external"
         ) {
             // Create flex message
             let message = cart.genMsg();
@@ -222,162 +222,51 @@ var cart = {
 
   genMsg : function() {
     let flexJson = {
-                    type: "bubble",
-                    size: "giga",
-                    body: {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "text",
-                                        text: "P ioopy",
-                                        size: "xl",
-                                        color: "#0551c2ff",
-                                        weight: "bold",
-                                        align: "center",
-                                    },
-                                ],
-                            },
-                            {
-                                type: "separator",
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ค่างวด",
-                                                size: "md",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                        ],
-                        spacing: "md",
-                    },
-                    footer: {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "button",
-                                action: {
-                                    type: "uri",
-                                    label: "สอบถามเพิ่มเติม",
-                                    uri: "tel:0958263339",
+                type: "bubble",
+                size: "giga",
+                body: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "box",
+                            layout: "horizontal",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "P ioopy",
+                                    size: "xl",
+                                    color: "#0551c2ff",
+                                    weight: "bold",
+                                    align: "center",
                                 },
-                                style: "primary",
+                            ],
+                        },
+                        {
+                            type: "separator",
+                            margin: "lg",
+                        },
+                    ],
+                    spacing: "md",
+                },
+                footer: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "button",
+                            action: {
+                                type: "uri",
+                                label: "สอบถามเพิ่มเติม",
+                                uri: "www.google.com",
                             },
-                        ],
-                    },
-                };
+                            style: "primary",
+                        },
+                    ],
+                },
+            };
 
-    return [{ type: "flex", altText: "คำนวณค่างวดรถ", contents: flexJson }];
+    return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
   
