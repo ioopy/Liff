@@ -208,7 +208,21 @@ var cart = {
       price_total = price_total + getPrice.price;
     }
     console.log(price_total);
-   
+    let dataObject = cart.getMsgApi(price_total, userId);
+    let url_script = "https://script.google.com/macros/s/AKfycbxx8XufwPeOwhlnLNejbg0D0eTsG_tlAwO6BLJT_2bR3jipDiVHEvpjGhWg0GClGSMNBQ/exec";
+    let param = "&total="+price_total+"&data="+dataObject;
+    let url = url_script + "?callback=alert('test')"+param;
+    var req_script = jQuery.ajax({
+      crossDomain: true,
+      url: url,
+      method: "GET",
+      dataType: "jsonp",
+      error: function(xhr, status, error){
+         var errorMessage = xhr.status + ': ' + xhr.statusText
+         alert('Error - ' + errorMessage);
+
+   }
+    });
     
     alert('checkout');
     if(userId === '') {
