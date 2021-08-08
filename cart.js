@@ -258,26 +258,13 @@ var cart = {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "ยอดรวมทั้งหมด",
-                                                size: "sm",
-                                            },
-                                        ],
-                                        width: "110px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "",
-                                                size: "sm",
-                                                align: "end",
-                                                weight: "bold",
+                                                text: "รายการ",
+                                                size: "md",
                                             },
                                         ],
                                     },
                                 ],
+                                margin: "lg",
                             },
                         ],
                         spacing: "md",
@@ -291,7 +278,7 @@ var cart = {
                                 action: {
                                     type: "uri",
                                     label: "สอบถามเพิ่มเติม",
-                                    uri: "tel:0958263339",
+                                    uri: "www.google.com",
                                 },
                                 style: "primary",
                             },
