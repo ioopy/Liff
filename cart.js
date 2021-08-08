@@ -231,10 +231,12 @@ var cart = {
     alert(userId);
      var sendMsg = jQuery.ajax({
       url: "https://api.line.me/v2/bot/message/push",
+      changeOrigin: true,
       method: "POST",
-       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer +jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU='
+      headers: {
+        
+        'Authorization': 'Bearer +jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU=',
+        'Content-Type': 'application/json'
       },
       data: cart.genMsg(userId),
        error: function(xhr, status, error){
