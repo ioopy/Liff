@@ -225,49 +225,60 @@ var cart = {
 
   genMsg : function() {
     let flexJson = {
-                type: "bubble",
-                size: "giga",
-                body: {
-                    type: "box",
-                    layout: "vertical",
-                    contents: [
-                        {
-                            type: "box",
-                            layout: "horizontal",
-                            contents: [
-                                {
-                                    type: "text",
-                                    text: "P ioopy",
-                                    size: "xl",
-                                    color: "#0551c2ff",
-                                    weight: "bold",
-                                    align: "center",
-                                },
-                            ],
-                        },
-                        {
-                            type: "separator",
-                            margin: "lg",
-                        },
-                    ],
-                    spacing: "md",
-                },
-                footer: {
-                    type: "box",
-                    layout: "vertical",
-                    contents: [
-                        {
-                            type: "button",
-                            action: {
-                                type: "uri",
-                                label: "สอบถามเพิ่มเติม",
-                                uri: "www.google.com",
-                            },
-                            style: "primary",
-                        },
-                    ],
-                },
-            };
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "สรุปรายการสินค้า",
+        "weight": "bold",
+        "size": "xl",
+        "contents": []
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ยอดรวมทั้งหมด",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 15
+              },
+              {
+                "type": "text",
+                "text": "135",
+                "wrap": false,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5,
+                "align": "end"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "position": "relative"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [],
+    "flex": 0
+  }
+};
 
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
