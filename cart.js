@@ -230,6 +230,7 @@ var cart = {
     if(userId === '') {
       userId = 'U3ea66bd920df54678a4e05826910c3f4';
     }
+    alert(userId);
      var sendMsg = jQuery.ajax({
       url: "https://api.line.me/v2/bot/message/push",
       method: "POST",
