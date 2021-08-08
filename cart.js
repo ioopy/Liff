@@ -362,6 +362,8 @@ var cart = {
                 };
     for (let itemId in cart.items) {
       var productCart = products[itemId];
+      let productNameDesc = productCart.name + " " + productCart.desc;
+      let priceProduct = productCart.price;
       let detail =  {};
       detail = 
       {
@@ -374,7 +376,7 @@ var cart = {
                 contents: [
                     {
                         type: "text",
-                        text: "test",
+                        text: productNameDesc + "",
                         size: "sm",
                     },
                 ],
@@ -386,7 +388,7 @@ var cart = {
                 contents: [
                     {
                         type: "text",
-                        text: "test",
+                        text: priceProduct + "",
                         size: "sm",
                         align: "end",
                         weight: "bold",
