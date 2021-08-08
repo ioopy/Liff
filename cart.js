@@ -200,14 +200,14 @@ var cart = {
   
   // (H) CHECKOUT
   checkout : function () {
-    alert(liff.getContext().type);
+    
     if (
             liff.getContext().type !== "none" &&
             liff.getContext().type !== "external"
         ) {
             // Create flex message
             let message = cart.genMsg();
-            alert(message);
+            
             // Send messages
             liff
                 .sendMessages(message)
