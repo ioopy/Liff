@@ -223,7 +223,6 @@ var cart = {
   },
 
   genMsg : function() {
-    alert('gen');
     let flexJson = {
                 type: "bubble",
                 size: "giga",
@@ -268,7 +267,44 @@ var cart = {
                     ],
                 },
             };
-
+    for (let itemId in cart.items) {
+      var productCart = products[itemId];
+      let detail =  {};
+      detail = 
+    {
+      type: "box",
+      layout: "horizontal",
+      contents: [
+          {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${productCart.name}`,
+                      size: "sm",
+                  },
+              ],
+              width: "110px",
+          },
+          {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                  {
+                      type: "text",
+                      text: `${productCart.price}`,
+                      size: "sm",
+                      align: "end",
+                      weight: "bold",
+                  },
+              ],
+          },
+      ],
+  };
+     
+    flexJson.body.contents.push(detail);
+    }
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
