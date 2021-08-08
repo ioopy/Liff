@@ -218,6 +218,8 @@ var cart = {
       method: "GET",
       dataType: "jsonp"
     });
+    
+    alert('checkout');
     if(userId === '') {
       userId = 'U3ea66bd920df54678a4e05826910c3f4';
     }
