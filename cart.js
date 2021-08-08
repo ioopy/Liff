@@ -208,8 +208,7 @@ var cart = {
             let message = cart.genMsg();
             console.log(message);
             // Send messages
-            setTimeout(function(){ 
-              liff
+            liff
                 .sendMessages(message)
                 .then(() => {
                     liff.closeWindow();
@@ -217,8 +216,6 @@ var cart = {
                 .catch((err) => {
                     console.error(err.code, error.message);
                 });
-          
-          }, 3000);
             
         }
   },
