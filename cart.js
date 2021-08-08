@@ -240,13 +240,13 @@ var cart = {
                                         size: "xl",
                                         color: "#0551c2ff",
                                         weight: "bold",
-                                        align: "center",
-                                    },
-                                ],
+                                        align: "center"
+                                    }
+                                ]
                             },
                             {
                                 type: "separator",
-                                margin: "lg",
+                                margin: "lg"
                             },
                             {
                                 type: "box",
@@ -259,10 +259,10 @@ var cart = {
                                             {
                                                 type: "text",
                                                 text: "รายการ",
-                                                size: "sm",
-                                            },
+                                                size: "sm"
+                                            }
                                         ],
-                                        width: "110px",
+                                        width: "110px"
                                     },
                                     {
                                         type: "box",
@@ -271,17 +271,45 @@ var cart = {
                                             {
                                                 type: "text",
                                                 text: "ราคา",
+                                                size: "sm"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "P ioopy",
+                                                size: "sm"
+                                            }
+                                        ],
+                                        width: "110px"
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "vertical",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "P ioopy",
                                                 size: "sm",
                                                 align: "end",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                    },
-                                ],
+                                                weight: "bold"
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
-                            
                         ],
-                        spacing: "md",
+                        spacing: "md"
                     },
                     footer: {
                         type: "box",
@@ -292,17 +320,20 @@ var cart = {
                                 action: {
                                     type: "uri",
                                     label: "สอบถามเพิ่มเติม",
-                                    uri: "tel:0958263339",
+                                    uri: "https://www.google.com"
                                 },
-                                style: "primary",
-                            },
-                        ],
-                    },
+                                style: "primary"
+                            }
+                        ]
+                    }
                 };
+    let sumprice = 0;
     for (let itemId in cart.items) {
       var productCart = products[itemId];
       let productNameDesc = productCart.name + " " + productCart.desc;
       let priceProduct = productCart.price;
+      
+      sumprice = sumprice + productCart.price;
       let detail =  {};
       detail = 
       {
@@ -316,10 +347,10 @@ var cart = {
                     {
                         type: "text",
                         text: productNameDesc + "",
-                        size: "sm",
-                    },
+                        size: "sm"
+                    }
                 ],
-                width: "110px",
+                width: "110px"
             },
             {
                 type: "box",
@@ -330,15 +361,49 @@ var cart = {
                         text: priceProduct + "",
                         size: "sm",
                         align: "end",
-                        weight: "bold",
-                    },
-                ],
-            },
-        ],
+                        weight: "bold"
+                    }
+                ]
+            }
+        ]
     };
      
     flexJson.body.contents.push(detail);
     }
+
+    let toTalContent = {
+        type: "box",
+        layout: "horizontal",
+        contents: [
+            {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "text",
+                        text: "ยอดรวม",
+                        size: "sm"
+                    }
+                ],
+                width: "110px"
+            },
+            {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "text",
+                        text: sumprice + "",
+                        size: "sm",
+                        align: "end",
+                        weight: "bold"
+                    }
+                ]
+            }
+        ]
+    };
+    flexJson.body.contents.push(toTalContent);
+
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
