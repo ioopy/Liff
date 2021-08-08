@@ -404,7 +404,7 @@ var cart = {
     };
     flexJson.body.contents.push(toTalContent);
 
-    return [{ type: "flex", altText: "ioopy", contents: flexJson }];
+    return [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }];
 
   }
   
