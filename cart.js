@@ -309,7 +309,7 @@ var cart = {
                                 action: {
                                     type: "uri",
                                     label: "สอบถามเพิ่มเติม",
-                                    uri: "www.google.com",
+                                    uri: "tel.191",
                                 },
                                 style: "primary",
                             },
