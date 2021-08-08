@@ -276,7 +276,7 @@ var cart = {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "P ioopy",
+                                                text: "สินค้า",
                                                 size: "sm",
                                             },
                                         ],
@@ -288,7 +288,7 @@ var cart = {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "P ioopy",
+                                                text: "ราคา",
                                                 size: "sm",
                                                 align: "end",
                                                 weight: "bold",
