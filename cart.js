@@ -227,7 +227,12 @@ var cart = {
       method: "POST",
       contentType : 'application/json',
       headers: {"Authorization": "Bearer +jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU="},
-      data: cart.genMsg(userId)
+      data: cart.genMsg(userId),
+       error: function(xhr, status, error){
+         var errorMessage = xhr.status + ': ' + xhr.statusText
+         alert('Error - ' + errorMessage);
+
+   }
     });
 
     if (
