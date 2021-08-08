@@ -258,24 +258,6 @@ var cart = {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "รายการ",
-                                                size: "md",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
                                                 text: "สินค้า",
                                                 size: "sm",
                                             },
