@@ -271,35 +271,6 @@ var cart = {
                                             {
                                                 type: "text",
                                                 text: "ราคา",
-                                                size: "sm"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
-                                                size: "sm"
-                                            }
-                                        ],
-                                        width: "110px"
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
                                                 size: "sm",
                                                 align: "end",
                                                 weight: "bold"
