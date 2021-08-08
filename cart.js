@@ -236,7 +236,7 @@ var cart = {
                                 contents: [
                                     {
                                         type: "text",
-                                        text: "P ioopy",
+                                        text: "สรุปรายการสินค้า",
                                         size: "xl",
                                         color: "#0551c2ff",
                                         weight: "bold",
@@ -258,25 +258,7 @@ var cart = {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "ค่างวด",
-                                                size: "md",
-                                            },
-                                        ],
-                                    },
-                                ],
-                                margin: "lg",
-                            },
-                            {
-                                type: "box",
-                                layout: "horizontal",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "vertical",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "P ioopy",
+                                                text: "ยอดรวมทั้งหมด",
                                                 size: "sm",
                                             },
                                         ],
@@ -378,6 +360,44 @@ var cart = {
                         ],
                     },
                 };
+    for (let itemId in cart.items) {
+      var productCart = products[itemId];
+      let detail =  {};
+      detail = 
+      {
+        type: "box",
+        layout: "horizontal",
+        contents: [
+            {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "text",
+                        text: "test",
+                        size: "sm",
+                    },
+                ],
+                width: "110px",
+            },
+            {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "text",
+                        text: "test",
+                        size: "sm",
+                        align: "end",
+                        weight: "bold",
+                    },
+                ],
+            },
+        ],
+    };
+     
+    flexJson.body.contents.push(detail);
+    }
     return [{ type: "flex", altText: "ioopy", contents: flexJson }];
 
   }
