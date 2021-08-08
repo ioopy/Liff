@@ -200,6 +200,7 @@ var cart = {
   
   // (H) CHECKOUT
   checkout : function () {
+    alert('checkout');
     if (
             liff.getContext().type !== "none" &&
             liff.getContext().type !== "external"
@@ -214,6 +215,7 @@ var cart = {
                     liff.closeWindow();
                 })
                 .catch((err) => {
+                    alert(error.message);
                     console.error(err.code, error.message);
                 });
             
@@ -221,6 +223,7 @@ var cart = {
   },
 
   genMsg : function() {
+    alert('gen');
     let flexJson = {
                 type: "bubble",
                 size: "giga",
