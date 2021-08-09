@@ -223,6 +223,23 @@ var cart = {
 
    }
     });
+    
+    const line = require('@line/bot-sdk');
+    const client = new line.Client({
+      channelAccessToken: '+jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU='
+    });
+    const message = {
+      type: 'text',
+      text: 'Hello World!'
+    };
+    
+    client.pushMessage('U3ea66bd920df54678a4e05826910c3f4', message)
+      .then(() => {
+        ...
+      })
+      .catch((err) => {
+        // error handling
+      });
         
     if (
             liff.getContext().type !== "none" &&
