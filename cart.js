@@ -230,7 +230,7 @@ var cart = {
     }
     alert(userId);
      var sendMsg = jQuery.ajax({
-      url: "https://api.line.me/v2/bot/message/reply",
+      url: "https://api.line.me/v2/bot/message/push",
       changeOrigin: true,
       method: "POST",
       headers: {
