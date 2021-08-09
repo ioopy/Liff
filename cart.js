@@ -223,51 +223,25 @@ var cart = {
 
    }
     });
-    
-    alert('checkout');
-    if(userId === '') {
-      userId = 'U3ea66bd920df54678a4e05826910c3f4';
-    }
-    alert(userId);
-     var sendMsg = jQuery.ajax({
-      url: "https://api.line.me/v2/bot/message/push",
-      changeOrigin: true,
-      crossDomain: true, 
-      method: "POST",
-      contentType: 'application/x-www-form-urlencoded', 
-      xhrFields: { withCredentials: true }, 
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Authorization': 'Bearer +jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU=',
-        'Content-Type': 'application/json',
-        'accept': 'application/json'
-      },
-      data: cart.genMsg(userId),
-       error: function(xhr, status, error){
-         var errorMessage = xhr.status + ': ' + xhr.statusText
-         alert('Error - ' + errorMessage);
-
-   }
-    });
-
+        
     if (
             liff.getContext().type !== "none" &&
             liff.getContext().type !== "external"
         ) {
           liff.closeWindow();
             // Create flex message
-            // let message = cart.genMsg();
+            let message = cart.genMsg('');
             
             // Send messages
-            // liff
-            //     .sendMessages(message)
-            //     .then(() => {
-            //         liff.closeWindow();
-            //     })
-            //     .catch((err) => {
-            //         alert(error.message);
-            //         console.error(err.code, error.message);
-            //     });
+            liff
+                .sendMessages(message)
+                .then(() => {
+                    liff.closeWindow();
+                })
+                .catch((err) => {
+                    alert(error.message);
+                    console.error(err.code, error.message);
+                });
             
         }
   },
@@ -447,8 +421,8 @@ var cart = {
         ]
     };
     flexJson.body.contents.push(toTalContent);
-    return {to: e, messages: [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }]};
-    // return [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }];
+//     return {to: e, messages: [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }]};
+    return [{ type: "flex", altText: "สรุปรายการสั่งซื้อ", contents: flexJson }];
 
   }
   
