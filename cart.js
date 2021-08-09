@@ -235,10 +235,10 @@ var cart = {
     
     client.pushMessage('U3ea66bd920df54678a4e05826910c3f4', message)
       .then(() => {
-        ...
+        alert('success');
       })
       .catch((err) => {
-        // error handling
+        alert(err);
       });
         
     if (
