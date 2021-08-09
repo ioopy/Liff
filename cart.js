@@ -234,10 +234,13 @@ var cart = {
       changeOrigin: true,
       crossDomain: true, 
       method: "POST",
+      contentType: 'application/x-www-form-urlencoded', 
+      xhrFields: { withCredentials: true }, 
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Authorization': 'Bearer +jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU=',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'accept': 'application/json'
       },
       data: cart.genMsg(userId),
        error: function(xhr, status, error){
