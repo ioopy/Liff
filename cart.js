@@ -225,15 +225,15 @@ var cart = {
     });
     
     const line = require('@line/bot-sdk');
-    const client = new line.Client({
+    const client1 = new line.Client({
       channelAccessToken: '+jHhnR4aD3dSZu44kHObjYxqJBZuSIPw1MjVSAjbn6ofZeWqfyQ2b2c3IefpRe0UOCVjVgca2IGYwxUddIEUtso1/lICfxTgAj22M7OmuL31T1EC6H0qOEiezn/QVYUh9AmxcAT0+ifirYBBUx3zhwdB04t89/1O/w1cDnyilFU='
     });
-    const message = {
+    const message1 = {
       type: 'text',
       text: 'Hello World!'
     };
     
-    client.pushMessage('U3ea66bd920df54678a4e05826910c3f4', message)
+    client1.pushMessage('U3ea66bd920df54678a4e05826910c3f4', message1)
       .then(() => {
         alert('success');
       })
