@@ -232,8 +232,7 @@ var cart = {
      var sendMsg = jQuery.ajax({
       url: "https://api.line.me/v2/bot/message/push",
       changeOrigin: true,
-        
-       
+      crossDomain: true, 
       method: "POST",
       headers: {
         'Access-Control-Allow-Origin': '*',
